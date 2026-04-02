@@ -1,0 +1,2 @@
+# Implementaci-nB-sicadeAutenticaci-ndeUsuarios
+Actividad práctica guiada para comprender cómo funciona un sistema de autenticación web, aplicando buenas prácticas en el manejo de credenciales, roles y niveles de acceso.
