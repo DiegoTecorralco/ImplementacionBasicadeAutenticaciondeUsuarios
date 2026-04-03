@@ -1,5 +1,7 @@
 // Elementos del DOM
-const fullname = document.getElementById("fullname");
+const nombre = document.getElementById("nombre");
+const apellidoPaterno = document.getElementById("apellidoPaterno");
+const apellidoMaterno = document.getElementById("apellidoMaterno");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
 const confirmPassword = document.getElementById("confirmPassword");
@@ -65,12 +67,41 @@ function resetRequirements() {
     reqSpecial.innerHTML = "❌ Al menos un símbolo especial";
 }
 
+// Función para obtener nombre completo
+function getNombreCompleto() {
+    const nombreValue = nombre.value.trim();
+    const apellidoPaternoValue = apellidoPaterno.value.trim();
+    const apellidoMaternoValue = apellidoMaterno.value.trim();
+    
+    let nombreCompleto = nombreValue;
+    if (apellidoPaternoValue) nombreCompleto += " " + apellidoPaternoValue;
+    if (apellidoMaternoValue) nombreCompleto += " " + apellidoMaternoValue;
+    
+    return nombreCompleto;
+}
+
 // ========== GESTIÓN DE USUARIOS ==========
 
 // Cargar usuarios existentes del localStorage
 let users = JSON.parse(localStorage.getItem("users")) || [
-    { email: "admin@test.com", password: "Admin123!", rol: "admin", fullname: "Administrador" },
-    { email: "user@test.com", password: "User2024$", rol: "usuario", fullname: "Usuario Normal" }
+    { 
+        email: "admin@test.com", 
+        password: "Admin123!", 
+        rol: "admin", 
+        nombre: "Administrador",
+        apellidoPaterno: "Del",
+        apellidoMaterno: "Sistema",
+        nombreCompleto: "Administrador Del Sistema"
+    },
+    { 
+        email: "user@test.com", 
+        password: "User2024$", 
+        rol: "usuario", 
+        nombre: "Usuario",
+        apellidoPaterno: "Normal",
+        apellidoMaterno: "Estándar",
+        nombreCompleto: "Usuario Normal Estándar"
+    }
 ];
 
 // Guardar usuarios en localStorage
@@ -93,15 +124,33 @@ registerForm.addEventListener("submit", function (e) {
     mensajeDiv.classList.remove("exito", "error");
     
     // Obtener valores
-    const userFullname = fullname.value.trim();
+    const nombreValue = nombre.value.trim();
+    const apellidoPaternoValue = apellidoPaterno.value.trim();
+    const apellidoMaternoValue = apellidoMaterno.value.trim();
     const userEmail = email.value.trim();
     const userPassword = password.value;
     const userConfirmPassword = confirmPassword.value;
     const userRol = rol.value;
     
     // Validar campos vacíos
-    if (userFullname === "" || userEmail === "" || userPassword === "" || userConfirmPassword === "") {
+    if (nombreValue === "" || apellidoPaternoValue === "" || apellidoMaternoValue === "" || 
+        userEmail === "" || userPassword === "" || userConfirmPassword === "") {
         showMessage("❌ Por favor, completa todos los campos", "error");
+        return;
+    }
+    
+    // Validar que solo contenga letras y espacios (sin números ni caracteres especiales)
+    const nameRegex = /^[a-zA-ZáéíóúñÑÁÉÍÓÚ\s]+$/;
+    if (!nameRegex.test(nombreValue)) {
+        showMessage("❌ El nombre solo puede contener letras", "error");
+        return;
+    }
+    if (!nameRegex.test(apellidoPaternoValue)) {
+        showMessage("❌ El apellido paterno solo puede contener letras", "error");
+        return;
+    }
+    if (!nameRegex.test(apellidoMaternoValue)) {
+        showMessage("❌ El apellido materno solo puede contener letras", "error");
         return;
     }
     
@@ -139,8 +188,13 @@ registerForm.addEventListener("submit", function (e) {
     }
     
     // ========== CREAR NUEVO USUARIO ==========
+    const nombreCompleto = getNombreCompleto();
+    
     const newUser = {
-        fullname: userFullname,
+        nombre: nombreValue,
+        apellidoPaterno: apellidoPaternoValue,
+        apellidoMaterno: apellidoMaternoValue,
+        nombreCompleto: nombreCompleto,
         email: userEmail,
         password: userPassword,
         rol: userRol
@@ -151,19 +205,19 @@ registerForm.addEventListener("submit", function (e) {
     
     // ========== FASE 5: MENSAJE SEGÚN ROL ==========
     if (userRol === "admin") {
-        showMessage("✅ ¡Registro exitoso! Serás redirigido al panel de Administrador (Acceso completo)", "exito");
+        showMessage(`✅ ¡Bienvenido Administrador ${nombreCompleto}! Registro exitoso. Serás redirigido al panel de control.`, "exito");
     } else {
-        showMessage("✅ ¡Registro exitoso! Serás redirigido al panel de Usuario (Acceso limitado)", "exito");
+        showMessage(`✅ ¡Bienvenido Usuario ${nombreCompleto}! Registro exitoso. Serás redirigido al panel de usuario.`, "exito");
     }
     
     // Limpiar formulario
     registerForm.reset();
     resetRequirements();
     
-    // Redirigir después de 2 segundos
+    // Redirigir después de 2.5 segundos
     setTimeout(() => {
         window.location.href = "./index.html";
-    }, 2000);
+    }, 2500);
 });
 
 // Función auxiliar para mostrar mensajes

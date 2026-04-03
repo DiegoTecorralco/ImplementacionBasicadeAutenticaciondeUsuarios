@@ -29,7 +29,7 @@
 
 /* Ajuste específico para el título del registro */
 .login-container h1 {
-    font-size: 38px; /* Ligeramente más pequeño para que quepa */
+    font-size: 38px;
 }
 
 /* Espaciado adicional para el formulario de registro (más campos) */
