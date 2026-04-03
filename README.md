@@ -24,4 +24,4 @@ Se desarrollará un sistema sencillo de inicio de sesión para una aplicación w
 | ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white) | Git | Control de versiones local |
 | ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white) | GitHub | Repositorio remoto y colaboración |
 
- ✦ Hecho por *Diego Tecorralco* (*TecoDev*) ✦
+
