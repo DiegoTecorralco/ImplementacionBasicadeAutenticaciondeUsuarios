@@ -1,0 +1,178 @@
+/* Ya no necesitas @import porque las fuentes vienen del HTML */
+
+body {
+    /* Gradiente de colores cálidos */
+    background-image: linear-gradient(to right, #0f1326, #191e33, #191B24);
+    
+    /* Para que cubra toda la pantalla */
+    margin: 0;  /* Elimina el margen por defecto del body */
+    min-height: 100vh;  /* Altura mínima = 100% del viewport */
+    
+    /* Centrar el contenido */
+    display: flex;  /* Activa flexbox en el body */
+    justify-content: center;  /* Centra horizontalmente */
+    align-items: center;  /* Centra verticalmente */
+    
+    /* Fuente Inter para el body (todos los párrafos heredarán esta) */
+    font-family: 'Inter';
+}
+
+/* Título con fuente Manrope */
+.login-container h1 {
+    color: #fff;
+    margin-bottom: 10px;  /* Espacio debajo del título */
+    font-size: 44px;
+    letter-spacing: 1px;  /* Espaciado entre letras */
+    font-family: 'Manrope';
+    font-weight: bold;
+}
+
+/* Contenedor principal */
+.login-container {
+    background-color: rgba(25, 27, 36, 0.95);  /* Fondo con 95% de opacidad */
+    border-radius: 20px;  /* Bordes redondeados */
+    box-shadow: 0 20px 35px rgba(77, 79, 198, 0.188);  /* Sombra externa */
+    width: 420px;  /* Ancho fijo */
+    text-align: center;  /* Centra el texto interno */
+    padding: 40px;  /* Espacio interno alrededor */
+}
+
+/* Todos los párrafos usarán Inter (por herencia del body) */
+.login-container > p {
+    color: #C4C5D9;
+    margin-bottom: 30px;  /* Espacio debajo del párrafo */
+    font-size: 14px;
+    font-family: 'Inter';
+}
+
+/* Formulario */
+.login-form label {
+    color: #C4C5D9;
+    text-align: left;  /* Alinea texto a la izquierda */
+    display: block;  /* Ocupa toda la línea */
+    margin-top: 15px;  /* Espacio arriba de cada label */
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;  /* Espaciado entre letras */
+    font-family: 'Inter';
+}
+
+.login-form input {
+    width: 100%;  /* Ocupa todo el ancho disponible */
+    padding: 12px;  /* Espacio interno */
+    margin: 8px 0;  /* Margen: 8px arriba/abajo, 0 laterales */
+    border: none;  /* Elimina borde por defecto */
+    border-radius: 8px;  /* Bordes redondeados */
+    background-color: #434656;
+    color: #fff;
+    box-sizing: border-box;  /* Incluye padding dentro del width */
+    font-size: 14px;
+    font-family: 'Inter';
+}
+
+.login-form input::placeholder {
+    color: #6B6E8A;
+}
+
+.login-form input:focus {
+    outline: none;  /* Elimina borde azul al hacer clic */
+    background-color: #52567a;
+}
+
+.forgot-password {
+    display: block;  /* Ocupa toda la línea */
+    text-align: right;  /* Alinea a la derecha */
+    font-size: 12px;
+    color: #2E5BFF;
+    text-decoration: none;  /* Elimina subrayado */
+    margin: 5px 0 20px;  /* Margen: 5px arriba, 0 laterales, 20px abajo */
+    font-family: 'Inter';
+}
+
+.forgot-password:hover {
+    text-decoration: underline;  /* Aparece subrayado al pasar mouse */
+}
+
+.login-form button {
+    width: 100%;  /* Ocupa todo el ancho */
+    padding: 14px;  /* Espacio interno */
+    margin: 10px 0 10px;  /* Margen: 10px arriba, 0 laterales, 10px abajo */
+    border: none;  /* Elimina borde */
+    border-radius: 8px;  /* Bordes redondeados */
+    background: linear-gradient(to right, #2E5BFF, #0035BE);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;  /* Cambia cursor a mano */
+    transition: opacity 0.3s;  /* Transición suave de 0.3 segundos */
+    letter-spacing: 1px;  /* Espaciado entre letras */
+    font-family: 'Inter';
+}
+
+.login-form button:hover {
+    opacity: 0.9;  /* Reduce opacidad al 90% */
+}
+
+/* Nueva cuenta */
+.new-account {
+    margin: 25px 0 20px;  /* Margen: 25px arriba, 0 laterales, 20px abajo */
+}
+
+.new-account p {
+    color: #C4C5D9;
+    font-size: 13px;
+    margin-bottom: 10px;  /* Espacio debajo */
+    font-family: 'Inter';
+}
+
+.create-account {
+    display: inline-block;  /* Bloque en línea */
+    color: #2E5BFF;
+    text-decoration: none;  /* Elimina subrayado */
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;  /* Espaciado entre letras */
+    font-family: 'Inter';
+}
+
+.create-account:hover {
+    text-decoration: underline;  /* Subrayado al pasar mouse */
+}
+
+/* Divisor */
+.divider {
+    border: none;  /* Elimina borde por defecto del hr */
+    height: 1px;  /* Altura de la línea */
+    background-color: #2E3142;
+    margin: 20px 0;  /* Margen: 20px arriba/abajo, 0 laterales */
+}
+
+/* Footer */
+.login-footer {
+    margin-top: 10px;  /* Espacio arriba */
+}
+
+.login-footer p {
+    color: #6B6E8A;
+    font-size: 10px;
+    margin-bottom: 10px;  /* Espacio debajo */
+    font-family: 'Inter';
+}
+
+.footer-links {
+    color: #6B6E8A;
+    font-size: 10px;
+    font-family: 'Inter';
+}
+
+.footer-links a {
+    color: #6B6E8A;
+    text-decoration: none;  /* Elimina subrayado */
+    margin: 0 5px;  /* Margen: 0 arriba/abajo, 5px laterales */
+    font-family: 'Inter';
+}
+
+.footer-links a:hover {
+    color: #2E5BFF;
+    text-decoration: underline;  /* Subrayado al pasar mouse */
+}
