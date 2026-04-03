@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/register.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <title>Registro - Acceso Escolar</title>
+</head>
+
+<body>
+    <section class="login-container">
+        <h1>CREAR CUENTA</h1>
+        <p>Regístrate en el portal académico de próxima generación.</p>
+        
+        <form class="login-form" id="registerForm">
+            <label>NOMBRE(S)</label>
+            <input type="text" id="nombre" placeholder="Juan Carlos" required />
+
+            <label>APELLIDO PATERNO</label>
+            <input type="text" id="apellidoPaterno" placeholder="Pérez" required />
+
+            <label>APELLIDO MATERNO</label>
+            <input type="text" id="apellidoMaterno" placeholder="García" required />
+
+            <label>CORREO ELECTRÓNICO</label>
+            <input type="email" id="email" placeholder="nombre@academia.edu" required />
+
+            <label>CONTRASEÑA</label>
+            <input type="password" id="password" placeholder="********" required />
+            
+            <label>CONFIRMAR CONTRASEÑA</label>
+            <input type="password" id="confirmPassword" placeholder="********" required />
+            
+            <!-- Indicador de seguridad de contraseña -->
+            <div class="password-requirements" id="passwordRequirements">
+                <small>🔒 Requisitos de contraseña:</small>
+                <ul>
+                    <li id="reqLength">❌ Mínimo 8 caracteres</li>
+                    <li id="reqUpperLower">❌ Mayúsculas y minúsculas</li>
+                    <li id="reqNumber">❌ Al menos un número</li>
+                    <li id="reqSpecial">❌ Al menos un símbolo especial</li>
+                </ul>
+            </div>
+
+            <label>SELECCIONA TU ROL</label>
+            <select id="rol" class="login-select">
+                <option value="usuario">👤 Usuario Estándar</option>
+                <option value="admin">👑 Administrador</option>
+            </select>
+            
+            <button type="submit">REGISTRARSE →</button>
+            
+            <!-- DIV para mensajes de validación -->
+            <div id="mensaje" class="mensaje-validacion"></div>
+        </form>
+        
+        <div class="new-account">
+            <p>¿YA TIENES UNA CUENTA?</p>
+            <a href="./index.html" class="create-account">INICIAR SESIÓN</a>
+        </div>
+        
+        <hr class="divider">
+        
+        <footer class="login-footer">
+            <p>© 2024 GESTIÓN ESCOLAR GLOBAL. ALL RIGHTS RESERVED.</p>
+            <div class="footer-links">
+                <a href="#">PRIVACY POLICY</a> | 
+                <a href="#">TERMS OF SERVICE</a> | 
+                <a href="#">HELP CENTER</a>
+            </div>
+        </footer>
+    </section>
+
+    <script src="./js/register.js"></script>
+</body>
+
+</html>

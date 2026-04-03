@@ -113,6 +113,33 @@ body {
     opacity: 0.9;  /* Reduce opacidad al 90% */
 }
 
+/* ============================================ */
+/* ESTILOS DEL MENSAJE DE VALIDACIÓN (NUEVO) */
+/* ============================================ */
+.mensaje-validacion {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Inter';
+    transition: all 0.3s ease;
+}
+
+.mensaje-validacion.exito {
+    background-color: rgba(46, 91, 255, 0.2);
+    color: #2E5BFF;
+    border: 1px solid rgba(46, 91, 255, 0.3);
+}
+
+.mensaje-validacion.error {
+    background-color: rgba(255, 59, 48, 0.2);
+    color: #FF3B30;
+    border: 1px solid rgba(255, 59, 48, 0.3);
+}
+
+
 /* Nueva cuenta */
 .new-account {
     margin: 25px 0 20px;  /* Margen: 25px arriba, 0 laterales, 20px abajo */

@@ -1,0 +1,88 @@
+/* ============================================ */
+/* ESTILOS EXCLUSIVOS PARA EL REGISTRO */
+/* ============================================ */
+
+/* Estilos para el select de roles */
+.login-select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 8px;
+    background-color: #434656;
+    color: #fff;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-family: 'Inter';
+    cursor: pointer;
+}
+
+.login-select option {
+    background-color: #191e33;
+    color: #fff;
+}
+
+.login-select:focus {
+    outline: none;
+    background-color: #52567a;
+}
+
+/* Ajuste específico para el título del registro */
+.login-container h1 {
+    font-size: 38px;
+}
+
+/* Espaciado adicional para el formulario de registro (más campos) */
+#registerForm {
+    margin-bottom: 10px;
+}
+
+/* ============================================ */
+/* ESTILOS DE REQUISITOS DE CONTRASEÑA */
+/* ============================================ */
+.password-requirements {
+    background-color: rgba(67, 70, 86, 0.6);
+    border-radius: 16px;
+    padding: 22px 25px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    text-align: left;
+    font-size: 15px;
+    border: 2px solid rgba(46, 91, 255, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.password-requirements small {
+    color: #C4C5D9;
+    display: block;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 8px;
+}
+
+.password-requirements ul {
+    margin: 5px 0 0 0;
+    padding-left: 30px;
+    list-style: none;
+}
+
+.password-requirements li {
+    color: #FF3B30;
+    margin: 12px 0;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    line-height: 1.6;
+    padding: 6px 0;
+    font-weight: 500;
+}
+
+.password-requirements li.valid {
+    color: #2E5BFF;
+    text-decoration: line-through;
+    opacity: 0.9;
+    font-size: 14px;
+    font-weight: 600;
+}
